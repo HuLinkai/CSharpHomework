@@ -26,18 +26,16 @@ namespace Program1
             a = int.Parse(s);
             for (int i = 2; i <= a; i++)
             {
-                bool isPrime = true;
-                for(int j = 2; j * j <= i; j++)
+                int j;
+                if(a % i == 0 )
                 {
-                    if(i % j == 0)
+                    for (j = 2; j <= i; j++)                     
                     {
-                        isPrime = false;
-                        break;
+                        if (i % j == 0)
+                            break;
                     }
-                }
-                if(isPrime)
-                {
-                    Console.WriteLine(i + "is Prime, it's factors are 1 and " + i);
+                    if (i == j)
+                        Console.WriteLine(i);
                 }
             }
         }
